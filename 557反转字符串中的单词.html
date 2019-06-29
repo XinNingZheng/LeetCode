@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    let str = "Let's take LeetCode contest";
+    var reverseWords = function(s){
+        //第一步，按空格分割字符串数组
+        let arr = s.split(" ");
+        //['Let's','take','LeetCode','contest']
+        
+        //第二步 循环
+        let res = arr.map((item)=>{
+            //['l','e','t'.''','s']
+            return item.split("").reverse().join("");
+        });
+        
+        return res.join(" ");
+
+        //方法二
+        return s.split(" ").map((item)=>{
+            return item.split("").reverse().join("");
+        }).join(" ");
+ 
+
+        //方法三 正则
+        return s.match(/[\w']+/g).map((item)=>{
+             return item.split("").reverse().join("");
+        }).join(" ");
+
+
+    }
+    console.log(reverseWords(str));
+
+</script>
+</body>
+</html>
