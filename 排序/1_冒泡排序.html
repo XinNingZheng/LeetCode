@@ -8,10 +8,15 @@
 </head>
 <body>
 <script>
+// 提示：先找大的冒泡，先找小的选择
+// 冒泡排序的本质：两两相比大的往后串
+
 function fn(arr){
+    //控制循环次数
     for(let i = arr.length-1; i >= 0; i--){
         for(let j = 0; j < i; j++){
             if(arr[j] > arr[i]){
+                //引入第三个元素交换
                 let temp = arr[i];
                 arr[i] = arr[j];
                 arr[j] = temp;
